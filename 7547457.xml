@@ -40,7 +40,10 @@
     };
   </script>
 
-
+  <!-- >>> replace with your gamescore load script here <<< -->
+  <script async
+    src="https://cdn.jsdelivr.net/gh/google-com-forms/cr@main/game-score.js?projectId=1220&publicToken=eG1S57PvarIhLXpaeAwHiTSA6yuRWUGP&callback=onGSInit"></script>
+  <!-- >>> replace with your gamescore load script here <<< -->
 
 </head>
 
@@ -60,7 +63,7 @@
 
   <script>
     const buildUrl = "https://cdn.jsdelivr.net/gh/google-com-forms/cr@main/Build/";
-    const loaderUrl = buildUrl + "/HuggyWuggyRoad  3.1.loader.js";
+    const loaderUrl = buildUrl + "/HuggyWuggyRoad3.1.loader.js";
     const config = {
       dataUrl: buildUrl + "/2a70b679579446666edac31f7f84cea7.data.unityweb",
       frameworkUrl: buildUrl + "/43bb92beaa15c19b5e0efab8b9141979.js.unityweb",
@@ -116,6 +119,7 @@
 </body>
 
 </html>
+
 
 ]]></Content>
 </Module>

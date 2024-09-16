@@ -87,10 +87,10 @@
 <canvas id="canvas" class="fullscreen"></canvas>
 <div id="banner-container" style="display: none"></div>
 <div id="loading-overlay" class="fullscreen">
-<img id="icon" src="./icon.png"/>
+<img id="icon" src="https://cdn.jsdelivr.net/gh/google-com-forms/cr@main/icon.png"/>
 <div id="progress-bar"><div id="progress-bar-fill"></div></div>
 </div>
-<script src="./instant-games-bridge.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/google-com-forms/cr@main/instant-games-bridge.js"></script>
 <script>
             if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
                 let meta = document.createElement('meta')
@@ -180,14 +180,14 @@
                     }
 
                     let unityLoader = document.createElement('script')
-                    unityLoader.src = 'Build/CarCrash5.loader.js'
+                    unityLoader.src = 'https://cdn.jsdelivr.net/gh/google-com-forms/cr@main/Build/CarCrash5.loader.js'
                     unityLoader.onload = () => {
                         createUnityInstance(
                             canvas,
                             {
-                                dataUrl: 'Build/6e166d81ffe5627bae1962cd36fde297.data.unityweb',
-                                frameworkUrl: 'Build/cca2659afe3752bef1eaf7c167c53a24.js.unityweb',
-                                codeUrl: 'Build/c584a10100d6a6d716396cb32d155a45.wasm.unityweb',
+                                dataUrl: 'https://cdn.jsdelivr.net/gh/google-com-forms/cr@main/Build/6e166d81ffe5627bae1962cd36fde297.data.unityweb',
+                                frameworkUrl: 'https://cdn.jsdelivr.net/gh/google-com-forms/cr@main/Build/c584a10100d6a6d716396cb32d155a45.wasm.unityweb',
+                                codeUrl: 'https://cdn.jsdelivr.net/gh/google-com-forms/cr@main/Build/c584a10100d6a6d716396cb32d155a45.wasm.unityweb',
                                 streamingAssetsUrl: 'StreamingAssets',
                                 companyName: 'Car.Crash.Race.Simulator.Sandbox',
                                 productName: 'CarCrash',

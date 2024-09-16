@@ -36,10 +36,7 @@
     };
   </script>
 
-  <!-- >>> replace with your gamescore load script here <<< -->
-  <script async
-    src="https://gs.eponesh.com/sdk/game-score.js?projectId=1220&publicToken=eG1S57PvarIhLXpaeAwHiTSA6yuRWUGP&callback=onGSInit"></script>
-  <!-- >>> replace with your gamescore load script here <<< -->
+
 
 </head>
 
@@ -49,7 +46,7 @@
   </div>
   <div id="loading-cover" style="display:none;">
     <div id="unity-loading-bar">
-      <div id="unity-logo"><img src="logo.png"></div>
+      <div id="unity-logo"><img src="https://cdn.jsdelivr.net/gh/google-com-forms/cr@main/logo.png"></div>
       <div id="unity-progress-bar-empty" style="display: none;">
         <div id="unity-progress-bar-full"></div>
       </div>
@@ -83,7 +80,7 @@
     }
 
     loadingCover.style.display = "";
-    canvas.style.background = "url('background.jpg') center / cover";
+    canvas.style.background = "url('https://cdn.jsdelivr.net/gh/google-com-forms/cr@main/background.jpg') center / cover";
 
     const script = document.createElement("script");
     var unityI = null;

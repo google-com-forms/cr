@@ -4,30 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unity Game</title>
-    <script src="https://cdn.jsdelivr.net/gh/google-com-forms/cr@main/Build/CarCrash5.loader.js"></script>
     <script>
         function loadUnity() {
             var buildUrl = "https://cdn.jsdelivr.net/gh/google-com-forms/cr@main/Build/";
-            var config = {
-                dataUrl: buildUrl + "6e166d81ffe5627bae1962cd36fde297.data.unityweb",
-                frameworkUrl: buildUrl + "c584a10100d6a6d716396cb32d155a45.wasm.framework.unityweb",
-                codeUrl: buildUrl + "c584a10100d6a6d716396cb32d155a45.wasm.code.unityweb",
-                streamingAssetsUrl: "StreamingAssets",
-                companyName: "YourCompanyName",
-                productName: "YourProductName",
-                productVersion: "1.0",
-            };
 
-            // Load the Unity content
-            var unityContainer = document.getElementById("unity-container");
-            var unityCanvas = document.getElementById("unity-canvas");
+            // Dynamically load the UnityLoader script
+            var script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/gh/google-com-forms/cr@main/Build/CarCrash5.loader.js';
+            script.onload = function() {
+                if (typeof UnityLoader !== 'undefined') {
+                    var config = {
+                        dataUrl: buildUrl + "6e166d81ffe5627bae1962cd36fde297.data.unityweb",
+                        frameworkUrl: buildUrl + "c584a10100d6a6d716396cb32d155a45.wasm.framework.unityweb",
+                        codeUrl: buildUrl + "c584a10100d6a6d716396cb32d155a45.wasm.code.unityweb",
+                        streamingAssetsUrl: "StreamingAssets",
+                        companyName: "YourCompanyName",
+                        productName: "YourProductName",
+                        productVersion: "1.0",
+                    };
 
-            UnityLoader.instantiate("unity-container", config, {
-                onProgress: function(instance, progress) {
-                    var loadingBar = document.getElementById("unity-loading-bar");
-                    loadingBar.style.width = (progress * 100) + "%";
+                    var unityContainer = document.getElementById("unity-container");
+
+                    UnityLoader.instantiate("unity-container", config, {
+                        onProgress: function(instance, progress) {
+                            var loadingBar = document.getElementById("unity-loading-bar");
+                            loadingBar.style.width = (progress * 100) + "%";
+                        }
+                    });
+                } else {
+                    console.error('UnityLoader is not defined. Check the script URL.');
                 }
-            });
+            };
+            script.onerror = function() {
+                console.error('Failed to load CarCrash5.loader.js script.');
+            };
+            document.head.appendChild(script);
         }
     </script>
     <style>
